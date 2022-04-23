@@ -31,6 +31,18 @@
             <artifactId>junit</artifactId>
             <version>4.11</version>
         </dependency>
+
+<!--        mysql 链接-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.22</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-dbcp2</artifactId>
+            <version>2.6.0</version>
+        </dependency>
     </dependencies>
 
     <build>
