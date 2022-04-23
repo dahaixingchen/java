@@ -1,9 +1,4 @@
-package effective;
-
-import java.math.BigInteger;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.EnumSet;
+package effective.chapter01;
 
 /**
  * @ClassName: Item01

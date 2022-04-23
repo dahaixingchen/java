@@ -1,4 +1,4 @@
-package effective;
+package effective.chapter01;
 
 /**
  * @ClassName: NutritionFacts
