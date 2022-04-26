@@ -1,4 +1,4 @@
-package com.chengfei.base.enum_about.singleton;
+package com.chengfei.base.enum_about.enum_singleton;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

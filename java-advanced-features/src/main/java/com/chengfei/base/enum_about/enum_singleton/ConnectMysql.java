@@ -1,4 +1,4 @@
-package com.chengfei.base.enum_about.singleton;
+package com.chengfei.base.enum_about.enum_singleton;
 
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.apache.commons.dbcp2.BasicDataSourceFactory;
