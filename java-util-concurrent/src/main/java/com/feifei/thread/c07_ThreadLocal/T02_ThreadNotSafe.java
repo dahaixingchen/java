@@ -1,13 +1,12 @@
 package com.feifei.thread.c07_ThreadLocal;
 
 /**
- * @Description: 两个线程修改同一个公共变量带来的问题，用锁的方式解决
+ * @Description: 两个线程修改同一个公共变量带来的线程安全问题
  * @ClassName: T02_ThreadLocal
  * @Author chengfei
  * @DateTime 2022/5/7 18:17
  **/
-public class T02_ThreadLocal_1 {
-
+public class T02_ThreadNotSafe {
     static Person p = new Person();
 
     public static void main(String[] args) {
@@ -25,7 +24,7 @@ public class T02_ThreadLocal_1 {
         thread2.start();
     }
 
-    static synchronized void setThread(String name) {
+    static void setThread(String name) {
         p.set(name);
         try {
             Thread.sleep(1000);
