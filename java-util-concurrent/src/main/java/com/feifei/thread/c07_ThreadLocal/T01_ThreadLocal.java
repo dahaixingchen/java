@@ -10,8 +10,6 @@ import java.util.concurrent.TimeUnit;
  **/
 public class T01_ThreadLocal {
 
-    volatile static Person p = new Person();
-
     static ThreadLocal<Person> tl = new ThreadLocal<>();
 
     public static void main(String[] args) {
@@ -44,4 +42,7 @@ public class T01_ThreadLocal {
 
 class Person {
     String name = "zhangsan";
+    public void set(String name){
+        this.name = name;
+    }
 }
