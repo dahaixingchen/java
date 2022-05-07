@@ -12,6 +12,7 @@ public class SimpHungrySingleton2 {
     private final static SimpHungrySingleton2 singleton = new SimpHungrySingleton2();
 
     public static SimpHungrySingleton2 getInstance(){
+
         return singleton;
     }
     public void doSomeThing(){
