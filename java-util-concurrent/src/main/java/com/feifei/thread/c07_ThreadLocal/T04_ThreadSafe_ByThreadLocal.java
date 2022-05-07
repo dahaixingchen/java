@@ -2,7 +2,7 @@ package com.feifei.thread.c07_ThreadLocal;
 
 /**
  * @TODO: 2022/5/7  : 两个线程修改同一个公共变量带来的问题，用threadLocal的方式解决
- *                    ThreadLocal就是把公共变量set进去，
+ * @TODO: ThreadLocal就是把公共变量set进去，
  * @ClassName: T02_ThreadLocal
  * @Author chengfei
  * @DateTime 2022/5/7 18:17
@@ -10,7 +10,6 @@ package com.feifei.thread.c07_ThreadLocal;
 public class T04_ThreadSafe_ByThreadLocal {
 
     static ThreadLocal<Person> threadLocal = new ThreadLocal();
-    static Person p = new Person();
 
     public static void main(String[] args) {
         //在主线程里set，也就只有主线程能拿到threadlocal里的数据

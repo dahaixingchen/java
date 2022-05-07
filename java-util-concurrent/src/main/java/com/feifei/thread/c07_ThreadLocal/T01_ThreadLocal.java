@@ -42,7 +42,8 @@ public class T01_ThreadLocal {
 
 class Person {
     String name = "zhangsan";
-    public void set(String name){
+
+    public void set(String name) {
         this.name = name;
     }
 }
