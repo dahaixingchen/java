@@ -55,6 +55,7 @@ java -XX:+PrintCommandLineFlags -version
    Manifest-Version: 1.0
    Created-By: mashibing.com
    Premain-Class: com.mashibing.jvm.agent.ObjectSizeAgent
+   
    ```
 
    注意Premain-Class这行必须是新的一行（回车 + 换行），确认idea不能有任何错误提示
