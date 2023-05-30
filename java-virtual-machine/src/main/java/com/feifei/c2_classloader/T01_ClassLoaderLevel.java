@@ -22,10 +22,10 @@ public class T01_ClassLoaderLevel {
 
         //结果：sun.misc.Launcher$ExtClassLoader@7ea987ac
         //DNSNameService 所在的位置D:\service\job_tool\jdk1.8.0_91\jre\lib\ext
-        System.out.println(sun.net.spi.nameservice.dns.DNSNameService.class.getClassLoader());
+//        System.out.println(sun.net.spi.nameservice.dns.DNSNameService.class.getClassLoader());
 
         //DNSNameService的classloader结果：null
-        System.out.println(sun.net.spi.nameservice.dns.DNSNameService.class.getClassLoader().getClass().getClassLoader());
+//        System.out.println(sun.net.spi.nameservice.dns.DNSNameService.class.getClassLoader().getClass().getClassLoader());
 
         //结果：sun.misc.Launcher$AppClassLoader@18b4aac2
         //T01_ClassLoaderLevel 所在的位置：项目所在位置

@@ -7,6 +7,7 @@ public class T06_SizeOfAnObject {
     public static void main(String[] args) {
         System.out.println(ObjectSizeAgent.sizeOf(new Object()));
         System.out.println(ObjectSizeAgent.sizeOf(new int[] {}));
+        System.out.println(ObjectSizeAgent.sizeOf(new long[] {}));
         System.out.println(ObjectSizeAgent.sizeOf(new P()));
     }
 
@@ -25,6 +26,10 @@ public class T06_SizeOfAnObject {
 
         Object o;       //4
         byte b3;        //1
+        byte b4;        //1
+        byte b5;        //1
+
+        long l;         //8
 
     }
 }
