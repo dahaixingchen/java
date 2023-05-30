@@ -18,13 +18,16 @@ public class T01_ClassLoaderLevel {
 
         //结果：null
         //HKSCS 所在的位置D:\service\job_tool\jdk1.8.0_91\jre\lib\
-        System.out.println(sun.awt.HKSCS.class.getClassLoader());
+        //java8才有这个类
+//        System.out.println(sun.awt.HKSCS.class.getClassLoader());
 
         //结果：sun.misc.Launcher$ExtClassLoader@7ea987ac
         //DNSNameService 所在的位置D:\service\job_tool\jdk1.8.0_91\jre\lib\ext
+        //java8才有这个类
 //        System.out.println(sun.net.spi.nameservice.dns.DNSNameService.class.getClassLoader());
 
         //DNSNameService的classloader结果：null
+        //java8才有这个类
 //        System.out.println(sun.net.spi.nameservice.dns.DNSNameService.class.getClassLoader().getClass().getClassLoader());
 
         //结果：sun.misc.Launcher$AppClassLoader@18b4aac2
