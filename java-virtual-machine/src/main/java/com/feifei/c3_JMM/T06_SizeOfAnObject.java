@@ -23,13 +23,23 @@ public class T06_SizeOfAnObject {
 //        System.out.println(ObjectSizeAgent.sizeOf(new P[] {new P(),new P(),new P(),new P(),new P()})); //
 //        System.out.println(ObjectSizeAgent.sizeOf(new long[] {1,1})); //8+4+4+8*2
         //8+8+4+4
+        System.out.println("**************int********************");
+        System.out.println(ObjectSizeAgent.sizeOf(new int[] {1,1,9})); //8+8+4+4*2
         System.out.println(ObjectSizeAgent.sizeOf(new int[] {1,1})); //8+8+4+4*2
         System.out.println(ObjectSizeAgent.sizeOf(new int[] {1})); //8+8+4+8
         System.out.println(ObjectSizeAgent.sizeOf(new int[] {})); //8+8+4
 
+        System.out.println("**************long********************");
+        System.out.println(ObjectSizeAgent.sizeOf(new long[] {1,1,5})); //8+8+4+8*2
         System.out.println(ObjectSizeAgent.sizeOf(new long[] {1,1})); //8+8+4+8*2
         System.out.println(ObjectSizeAgent.sizeOf(new long[] {1})); //8+8+4+4
         System.out.println(ObjectSizeAgent.sizeOf(new long[] {})); //8+8+4
+
+        System.out.println("**************{P}********************");
+        System.out.println(ObjectSizeAgent.sizeOf(new P[] {new P(),new P(),new P()})); //8+8+4+8*2
+        System.out.println(ObjectSizeAgent.sizeOf(new P[] {new P(),new P()})); //8+8+4+8*2
+        System.out.println(ObjectSizeAgent.sizeOf(new P[] {new P()})); //8+8+4+4
+        System.out.println(ObjectSizeAgent.sizeOf(new P[] {})); //8+8+4
 
 //        System.out.println(ObjectSizeAgent.sizeOf(new P()));
     }
