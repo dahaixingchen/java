@@ -14,12 +14,24 @@ import com.fei.ObjectSizeAgent;
  */
 public class T06_SizeOfAnObject {
     public static void main(String[] args) {
-        System.out.println(ObjectSizeAgent.sizeOf(new Object()));
-        //默认开启压缩：                                 8（markword）+4（类指针）+4（数组长度）+0（数组内容）+0（padding对齐）
-        //不开启压缩（-XX:-UseCompressedClassPointers）：8（markword）+8（类指针）+4（数组长度）+0（数组内容）+4（padding对齐）
-        System.out.println(ObjectSizeAgent.sizeOf(new int[] {1,2}));
-        System.out.println(ObjectSizeAgent.sizeOf(new long[] {1,2}));
-        System.out.println(ObjectSizeAgent.sizeOf(new P()));
+//        System.out.println(ObjectSizeAgent.sizeOf(new Object()));
+//        //默认开启压缩：                                 8（markword）+4（类指针）+4（数组长度）+0（数组内容）+0（padding对齐）
+//        //不开启压缩（-XX:-UseCompressedClassPointers）: 8（markword）+8（类指针）+4（数组长度）+0（数组内容）+4（padding对齐）
+//        System.out.println(ObjectSizeAgent.sizeOf(new int[] {1,2}));
+//        System.out.println(ObjectSizeAgent.sizeOf(new long[] {1,2})); //8+8+4+8+8+4=40
+////        //8+8+4+4*3
+//        System.out.println(ObjectSizeAgent.sizeOf(new P[] {new P(),new P(),new P(),new P(),new P()})); //
+//        System.out.println(ObjectSizeAgent.sizeOf(new long[] {1,1})); //8+4+4+8*2
+        //8+8+4+4
+        System.out.println(ObjectSizeAgent.sizeOf(new int[] {1,1})); //8+8+4+4*2
+        System.out.println(ObjectSizeAgent.sizeOf(new int[] {1})); //8+8+4+8
+        System.out.println(ObjectSizeAgent.sizeOf(new int[] {})); //8+8+4
+
+        System.out.println(ObjectSizeAgent.sizeOf(new long[] {1,1})); //8+8+4+8*2
+        System.out.println(ObjectSizeAgent.sizeOf(new long[] {1})); //8+8+4+4
+        System.out.println(ObjectSizeAgent.sizeOf(new long[] {})); //8+8+4
+
+//        System.out.println(ObjectSizeAgent.sizeOf(new P()));
     }
 
     //一个Object占多少个字节
