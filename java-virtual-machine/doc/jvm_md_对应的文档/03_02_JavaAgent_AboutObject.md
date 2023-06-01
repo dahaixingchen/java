@@ -65,7 +65,7 @@ java -XX:+PrintCommandLineFlags -version
 5. 在需要使用该Agent Jar的项目中引入该Jar包
    project structure - project settings - library 添加该jar包
 
-6. 运行时需要该Agent Jar的类，加入参数：
+6. 运行时需要该Agent Jar的类，加入参数(一定是加在jvm参数中)：
 
    ```java
    -javaagent:C:\work\ijprojects\ObjectSize\out\artifacts\ObjectSize_jar\ObjectSize.jar

@@ -3,10 +3,19 @@ package com.feifei.c3_JMM;
 
 import com.fei.ObjectSizeAgent;
 
+/**
+ * 运行是jvm参数中加入：   -javaagent:C:\work\ijprojects\ObjectSize\out\artifacts\ObjectSize_jar\ObjectSize.jar
+ *
+ * 查看jvm的配置： java -XX:+PrintCommandLineFlags -version
+ *
+ * @param
+ * @return:{@link null}
+ * @DateTime: 2023/5/31 10:43
+ */
 public class T06_SizeOfAnObject {
     public static void main(String[] args) {
         System.out.println(ObjectSizeAgent.sizeOf(new Object()));
-        //默认开启压缩：8（markword）+4（类指针）+4（数组长度）+0（数组内容）+0（padding对齐）
+        //默认开启压缩：                                 8（markword）+4（类指针）+4（数组长度）+0（数组内容）+0（padding对齐）
         //不开启压缩（-XX:-UseCompressedClassPointers）：8（markword）+8（类指针）+4（数组长度）+0（数组内容）+4（padding对齐）
         System.out.println(ObjectSizeAgent.sizeOf(new int[] {1,2}));
         System.out.println(ObjectSizeAgent.sizeOf(new long[] {1,2}));
