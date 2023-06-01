@@ -3,6 +3,15 @@ package com.feifei.c3_JMM;
 
 import com.fei.ObjectSizeAgent;
 
+/**
+ * 运行是jvm参数中加入：   -javaagent:C:\work\ijprojects\ObjectSize\out\artifacts\ObjectSize_jar\ObjectSize.jar
+ *
+ * 查看jvm的配置： java -XX:+PrintCommandLineFlags -version
+ *
+ * @param
+ * @return:{@link null}
+ * @DateTime: 2023/5/31 10:43
+ */
 public class T06_SizeOfAnObject {
     public static void main(String[] args) {
 //        System.out.println(ObjectSizeAgent.sizeOf(new Object()));
@@ -14,13 +23,23 @@ public class T06_SizeOfAnObject {
 //        System.out.println(ObjectSizeAgent.sizeOf(new P[] {new P(),new P(),new P(),new P(),new P()})); //
 //        System.out.println(ObjectSizeAgent.sizeOf(new long[] {1,1})); //8+4+4+8*2
         //8+8+4+4
+        System.out.println("**************int********************");
+        System.out.println(ObjectSizeAgent.sizeOf(new int[] {1,1,9})); //8+8+4+4*2
         System.out.println(ObjectSizeAgent.sizeOf(new int[] {1,1})); //8+8+4+4*2
         System.out.println(ObjectSizeAgent.sizeOf(new int[] {1})); //8+8+4+8
         System.out.println(ObjectSizeAgent.sizeOf(new int[] {})); //8+8+4
 
+        System.out.println("**************long********************");
+        System.out.println(ObjectSizeAgent.sizeOf(new long[] {1,1,5})); //8+8+4+8*2
         System.out.println(ObjectSizeAgent.sizeOf(new long[] {1,1})); //8+8+4+8*2
         System.out.println(ObjectSizeAgent.sizeOf(new long[] {1})); //8+8+4+4
         System.out.println(ObjectSizeAgent.sizeOf(new long[] {})); //8+8+4
+
+        System.out.println("**************{P}********************");
+        System.out.println(ObjectSizeAgent.sizeOf(new P[] {new P(),new P(),new P()})); //8+8+4+8*2
+        System.out.println(ObjectSizeAgent.sizeOf(new P[] {new P(),new P()})); //8+8+4+8*2
+        System.out.println(ObjectSizeAgent.sizeOf(new P[] {new P()})); //8+8+4+4
+        System.out.println(ObjectSizeAgent.sizeOf(new P[] {})); //8+8+4
 
 //        System.out.println(ObjectSizeAgent.sizeOf(new P()));
     }
@@ -34,12 +53,15 @@ public class T06_SizeOfAnObject {
         int id;         //4
         String name;    //4
         int age;        //4
+
         byte b1;        //1
         byte b2;        //1
+
         Object o;       //4
         byte b3;        //1
         byte b4;        //1
         byte b5;        //1
+
         long l;         //8
 
     }
